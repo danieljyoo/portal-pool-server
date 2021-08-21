@@ -1,0 +1,28 @@
+{
+  "name": "portal-api-listener-subscriber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "aws-sdk": "^2.948.0",
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "jest": "^27.0.6",
+    "sqs-producer": "^2.1.0",
+    "uuid": "^3.3.2"
+  },
+  "dependencies": {
+    "dynamodb-update-expression": "^0.1.21",
+    "sqs-consumer": "^5.5.0",
+    "web3": "^1.4.0",
+    "xhr2": "^0.2.1"
+  }
+}
