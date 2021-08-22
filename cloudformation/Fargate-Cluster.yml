@@ -8,6 +8,8 @@ Parameters:
     Type: Number
   ImageURI:
     Type: String
+  EnvironmentFile:
+    Type: String
 
 Resources:
 
@@ -109,6 +111,8 @@ Resources:
       ContainerDefinitions:
         - Name: !Join ['-', [!Ref Stage, !Ref 'AWS::AccountId', 'Container']]
           Image: !Ref ImageURI
+          # Environment:
+          # EnvironmentFiles: 
           PortMappings:
             - ContainerPort: !Ref ContainerPort
               HostPort: !Ref ContainerPort
@@ -180,7 +184,7 @@ Resources:
       ServiceName: !Join ['-', [!Ref Stage, !Ref 'AWS::AccountId', 'ECSService']]
       Cluster: !Ref Cluster
       TaskDefinition: !Ref TaskDefinition
-      DesiredCount: 2
+      DesiredCount: 1
       LaunchType: FARGATE
       NetworkConfiguration: 
         AwsvpcConfiguration:

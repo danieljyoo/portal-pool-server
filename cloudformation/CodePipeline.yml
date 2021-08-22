@@ -166,7 +166,8 @@ Resources:
                   {
                     "ImageURI" : { "Fn::GetParam" : ["build-output-artifacts", "imageDetail.json", "ImageURI"] },
                     "Stage":  "${Stage}",
-                    "ContainerPort": "${ContainerPort}"
+                    "ContainerPort": "${ContainerPort}",
+                    "EnvironmentFile": "${S3Bucket}/env/${Stage}.env"
                   }
                 RoleArn: 
                   Fn::GetAtt: [ CloudformationExecutionRole, Arn ]
