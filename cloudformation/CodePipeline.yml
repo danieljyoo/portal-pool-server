@@ -167,7 +167,7 @@ Resources:
                     "ImageURI" : { "Fn::GetParam" : ["build-output-artifacts", "imageDetail.json", "ImageURI"] },
                     "Stage":  "${Stage}",
                     "ContainerPort": "${ContainerPort}",
-                    "EnvironmentFile": "${S3Bucket}/env/${Stage}.env"
+                    "EnvironmentFile": "arn:aws:s3:::portal-test-ecs-env-files/dev.env"
                   }
                 RoleArn: 
                   Fn::GetAtt: [ CloudformationExecutionRole, Arn ]
