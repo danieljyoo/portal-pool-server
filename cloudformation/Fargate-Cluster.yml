@@ -111,7 +111,9 @@ Resources:
       ContainerDefinitions:
         - Name: !Join ['-', [!Ref Stage, !Ref 'AWS::AccountId', 'Container']]
           Image: !Ref ImageURI
-          # EnvironmentFiles: 
+          EnvironmentFiles: 
+            - Type: "s3"
+              Value: !Ref EnvironmentFile
           PortMappings:
             - ContainerPort: !Ref ContainerPort
               HostPort: !Ref ContainerPort
